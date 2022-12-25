@@ -1,0 +1,91 @@
+AWS Identity and Access Management IAM
+
+Authenticating and authorization to aws infrastructure, best practices.
+
+All principals must be authenticated in order to access AWS services. Users, group, roles and policies are prinicipals.
+A principal is a person, or application that can make a requests for an action or operation on an aws resource
+ 
+
+We can assign permissions to users, and then assign policies to control access to resources
+Identity based policicites
+Resource based policy
+Everything in AWS is a API action. eg CreateUser GetBucket RunInstances
+
+A. Identity based policies can be applied to users, groups and roles. Policies defines the permissions for the identities or resources they are associated with.
+
+Users.
+1. Account root users: Has all access and all permissions
+2. User account: Up to 5000 can be created, comes default with no permisson. They comes with arn ( Amazon resource name) e.g arn:aws:iam::62512345678:user/Andrea and also the friendly name e.g Andrea
+
+Groups
+They are collection of users to organize and apply permissions through a policy A user can be in a max of 10 groups.
+
+Roles: 
+Identities that have specific permission assigned to it. Once a user or group assumes a role, it gains the identity and permission of that role and can perform actions.
+Policiies:
+Policies are  documents that defines permissions and they are written in json. All permissiions are implicitly denied by defualt in AWS
+
+B Resource based policies apply to to resources such as S3 buckets or DynamoDB tables
+
+Authentication methods, via username and password combo, or via Access Key ID and Secret Access key. They are useful when loggin in from the cli, or by programs API
+
+IAM does not need region setup, its not region specific.
+
+
+AWS Security Token Service (STS)
+Service that provides short lived or temporary credentials.
+
+
+IAM Password Policy- Use IAM default policy, or set your own policy under IAM
+
+
+Identity Based Policy are JSON permissions policy documents that control what actions an identity can perform, on which resources, and under what conditions. There are two types, 
+A Inline policy: Has one to one policy with a user role or group, we can attach a policy to a user only, or group, one at a time ina 1-1 relationship. Delete the user, and the policy is gone. A permission policy is an example of a inine based policy.
+
+B Managed policy: Either by your org, or by AWS. They are created and managed by AWS, customer managed are created and managed by you. Can be attached to a combo of user, group roles all at the same time.
+
+Resource Based Policy are JSON policy documents attached to a AWS resource such as S3 bucket. A trust policy is an exanple of a resource -based policy
+
+
+
+
+
+Amazon ELastic Compute Cloud EC2
+
+Ec2 types
+EC2 AMI Amazon Machine Image, an image snapshot made from an ebs snapshot
+
+
+
+
+
+EBS Elastic Block Storage
+
+Security group controls inbound and outbound traffic to an EC2. Its simply a firewall
+EC2 is a regional service
+
+
+To launch an EC2, start from compute
+Launch an AMI
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
